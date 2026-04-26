@@ -1,0 +1,5 @@
+---
+# Default variables for the operator role
+awx_namespace: "awx"
+operator_version: "2.19.1"
+operator_repo: "https://github.com/ansible/awx-operator.git"

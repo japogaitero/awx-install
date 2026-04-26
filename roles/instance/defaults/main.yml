@@ -1,0 +1,4 @@
+---
+# Default variables for the instance role
+awx_name: "awx-server"
+awx_port: 30088

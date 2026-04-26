@@ -1,0 +1,26 @@
+---
+- name: Create the namespace for AWX
+  kubernetes.core.k8s:
+    name: "{{ awx_namespace }}"
+    api_version: v1
+    kind: Namespace
+    state: present
+
+- name: Clone the AWX Operator repository
+  ansible.builtin.git:
+    repo: "{{ operator_repo }}"
+    dest: ./awx-operator
+    version: "{{ operator_version }}"
+    force: yes
+
+- name: Deploy the AWX Operator using Kustomize
+  ansible.builtin.shell: |
+    export NAMESPACE={{ awx_namespace }}
+    make deploy
+  args:
+    chdir: ./awx-operator
+  register: operator_deploy_output
+
+- name: Display deployment output
+  ansible.builtin.debug:
+    var: operator_deploy_output.stdout_lines

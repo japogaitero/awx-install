@@ -1,0 +1,27 @@
+# Virtual environments
+venv/
+.venv/
+**/venv/
+
+# Editor configuration folders
+.vscode/
+.idea/
+
+# Ansible files and Logs
+*.retry
+*.log
+.ansible/
+.cache/
+
+# Secrets and Environments
+.env
+secrets.yml
+*.pem
+*.key
+
+# External dependencies folders (IMPORTANT!)
+awx-operator/
+
+# System files
+.DS_Store
+__pycache__/

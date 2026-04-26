@@ -1,0 +1,7 @@
+---
+- name: Main Orchestration Playbook
+  hosts: localhost
+  connection: local
+  roles:
+    - operator
+    - instance

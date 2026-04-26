@@ -1,0 +1,6 @@
+# group_vars/all.yml
+awx_namespace: "awx"
+operator_version: "2.19.1"
+operator_repo: "https://github.com/ansible/awx-operator.git"
+awx_port: 30088
+awx_name: "awx-server"

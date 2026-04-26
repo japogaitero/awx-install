@@ -1,0 +1,6 @@
+---
+- name: Apply AWX instance configuration
+  kubernetes.core.k8s:
+    state: present
+    # Esta es la forma más limpia: renderiza en memoria y convierte a YAML
+    definition: "{{ lookup('template', 'awx-instance.yml.j2') | from_yaml }}"
